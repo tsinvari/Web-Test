@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Topics</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Aclonica" rel=’stylesheet’>
+    <link href="https://fonts.googleapis.com/css?family=Allan" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merienda" rel=’stylesheet’>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Table topics - Switch edition</h1>
+        <h2 class="sub-title">SES - Toastmaster</h2>
+        <div class="card-container">
+            <div class="scrollable-grid">
+                <div class="card-grid" id="cardGrid">
+                    <!-- Cards will be generated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const questions = [
+            "What’s the funniest thing that happened to you while moving to a new office?",
+            "Did you ever get lost in your new office? If so, how did you find your way back?",
+            "Have you ever accidentally walked into the wrong office? What happened?",
+            "What’s the most embarrassing thing that happened to you on your first day at a new office?",
+            "Have you ever had trouble finding the bathroom in a new office? What did you do?",
+            "What’s the weirdest thing you’ve seen in a new office?",
+            "Have you ever spilled coffee or food on your new desk? What did you do?",
+            "What’s the most awkward conversation you’ve had with a coworker in a new office?",
+            "Have you ever accidentally sent an email to the wrong person in a new office? What happened?",
+            "What’s the most ridiculous dress code you’ve ever encountered in a new office?",
+            "Have you ever had trouble with the office equipment in a new office? What did you do?",
+            "What’s the most hilarious prank you’ve ever played on a coworker in a new office",
+            // Add more questions here
+        ];
+
+        const cities = [
+            "Sao Paulo",
+            "Betzdorf",
+            "Washington",
+            "Paris",
+            "Accra",
+            "Tel-Aviv",
+            "Bucuresti",
+            "Mexico",
+            "Bogota",
+            "Dubai",
+            "The hague",
+            "Singapore",
+
+        ];
+
+        const images = [
+            "image1.jpeg",
+            "image2.jpeg",
+            "image3.jpeg",
+            "image4.jpeg",
+            "image5.jpeg",
+            "image6.jpeg",
+            "image7.jpeg",
+            "image8.jpeg",
+            "image9.jpeg",
+            "image10.jpeg",
+            "image11.jpeg",
+            "image12.jpeg",
+            // Add more image URLs here
+        ];
+
+        const cardGrid = document.getElementById("cardGrid");
+
+        questions.forEach((question, index) => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            const cardInner = document.createElement("div");
+            cardInner.classList.add("card-inner");
+
+            const cardFront = document.createElement("div");
+            cardFront.classList.add("card-front");
+            cardFront.style.backgroundImage = `url(${images[index]})`;
+
+            const cardBack = document.createElement("div");
+            cardBack.classList.add("card-back");
+
+            const cardBackTitle = document.createElement("div")
+            cardBackTitle.classList.add("card-back-title")
+            cardBackTitle.textContent = cities[index];
+
+            const cardBackText = document.createElement("div")
+            cardBackText.classList.add("card-back-text")
+            cardBackText.textContent = question;
+
+            cardInner.appendChild(cardFront);
+            cardInner.appendChild(cardBack);
+
+            cardBack.appendChild(cardBackTitle);
+            cardBack.appendChild(cardBackText);
+
+
+            card.appendChild(cardInner);
+
+            card.addEventListener("click", function() {
+                this.classList.toggle("flipped");
+            });
+
+            cardGrid.appendChild(card);
+        });
+    </script>
+</body>
+</html>

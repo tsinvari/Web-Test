@@ -1,0 +1,137 @@
+/* Basic styling for the card grid */
+body, html {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100hv;
+    background-image: url(backgroundweb.jpeg);
+    background-size: cover;
+}
+
+.title {
+    font-size: 60px;
+    color: rgb(90, 115, 120); 
+    text-align: center;
+    font-family: 'Aclonica', cursive;
+    text-shadow:    -1px -1px 0 rgb(88, 147, 153),  
+                    1px -1px 0 rgb(88, 147, 153),
+                    -1px 1px 0 rgb(69, 69, 69),
+                    1px 1px 0 rgb(69, 69, 69); 
+    margin: 0%; 
+    margin-top: 15px;
+                
+}
+
+.sub-title {
+    font-size: 48px;
+    color: rgb(62, 60, 60); 
+    text-align: center;
+    font-family: 'Aclonica', cursive;
+   
+    margin: 0px;
+}
+
+
+.card-container {
+    position: center;
+    align-items: center;
+    display: flex;
+
+}
+.scrollable-grid {
+    max-width: 1000px;
+    max-height: 100vh; 
+    overflow-y: auto; 
+}
+
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+
+.card {
+    width: 300px;
+    height: 300px;
+    perspective: 1000px; 
+    position: relative;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: absolute;
+    transform-origin: center; 
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+
+    
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    transform-origin: center; 
+}
+
+
+.card-back {
+    transform: rotateY(180deg);
+    text-align: center;
+    background-image: url("backcard.jpeg");
+}
+.card-front{
+    text-align: center;
+}
+
+.card-back-title {
+    margin-bottom: 10px;
+    font-size: 30px;
+    text-transform: uppercase; 
+    font-family: 'Merienda', cursive;
+    color: rgb(246, 241, 241); 
+    text-shadow:    -1px -1px 0 black,  
+                    1px -1px 0 black,
+                    -1px 1px 0 black,
+                     1px 1px 0 black; 
+}
+
+.card-back-text {
+    margin: 10px;
+    font-family: 'Allan', cursive;
+    font-size: 25px;
+    color: rgb(246, 241, 241); 
+    text-shadow: -1px -1px 0 black,  
+                    1px -1px 0 black,
+                -1px 1px 0 black,
+                    1px 1px 0 black; 
+}
