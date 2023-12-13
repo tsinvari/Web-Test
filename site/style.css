@@ -6,37 +6,38 @@ body, html {
     height: 100vh;
 }
 
+@font-face {
+    font-family: 'Della Respira';
+    src: url('resources/fonts/Della_Respira/DellaRespira-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('resources/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype');
+
+}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100hv;
-    background-image: url(backgroundweb.jpeg);
+    background-image: url(resources/Images/backgroundweb.jpg);
     background-size: cover;
 }
 
 .title {
     font-size: 60px;
-    color: rgb(90, 115, 120); 
+    color: #1E4672; 
     text-align: center;
-    font-family: 'Aclonica', cursive;
-    text-shadow:    
-                    -1px 1px 0 rgb(69, 69, 69),
-                    1px 1px 0 rgb(69, 69, 69); 
-    margin: 0%; 
-    margin-top: 15px;
+    font-family: 'Della Respira', cursive;
+
+    margin: 25px; 
+    margin-bottom: 35px;
                 
 }
 
-.sub-title {
-    font-size: 48px;
-    color: rgb(60, 60, 60); 
-    text-align: center;
-    font-family: 'Aclonica', cursive;
-   
-    margin: 0px;
-}
 
 
 .card-container {
@@ -104,17 +105,19 @@ body, html {
 .card-back {
     transform: rotateY(180deg);
     text-align: center;
-    background-image: url("backcard.jpeg");
+    background-image: url("resources/Images/backcard.jpeg");
 }
 .card-front{
     text-align: center;
 }
 
+
+
 .card-back-title {
     margin-bottom: 10px;
     font-size: 30px;
     text-transform: uppercase; 
-    font-family: 'Merienda', cursive;
+    font-family: 'Open Sans';
     color: rgb(246, 241, 241); 
     text-shadow:    -1px -1px 0 black,  
                     1px -1px 0 black,
@@ -124,7 +127,7 @@ body, html {
 
 .card-back-text {
     margin: 10px;
-    font-family: 'Allan', cursive;
+    font-family: 'Open Sans';
     font-size: 25px;
     color: rgb(246, 241, 241); 
     text-shadow: -1px -1px 0 black,  
