@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Topics</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Aclonica" rel=’stylesheet’>
+    <link href="https://fonts.googleapis.com/css?family=Allan" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merienda" rel=’stylesheet’>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Table topics - SES Switch edition</h1>
+        <div class="card-container">
+            <div class="scrollable-grid">
+                <div class="card-grid" id="cardGrid">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const questions = [
+            "Knowing yourself, what would the funniest thing that would happen the first day?",
+            "First time in Betzdorf, you got lost in main building (ABC)? How would you find your way out?",
+            "You arrived to the city, walked to the office and just learned that P&C closed them down... ",
+            "You have to speak french, tell us your most embarrassing annecdote while getting food...",
+            "You are having trouble finding the bathroom, you have to ask, paint us a picture?",
+            "You have to order some shawarma and Hummus, you don't speak hebrew, they dont speak your language. Go!",
+            "You spilled coffee on your new desk? What did you do?",
+            "You just had the most awkward conversation with a coworker; he meant food, you though something else?",
+            "You introduced yourself to the entire team, and then realized you're in the wrong office/company?",            
+            "Your coworkers take you to the city, and you see yourself with the wrong dress code... ",
+            "Have you ever had trouble with the office equipment in a new office? What did you do?",
+            "You decided to prank you coworkers as a way of introducing your playful attitude...",
+        ];
+
+        const cities = [
+            "Sao Paulo",
+            "Betzdorf",
+            "Washington",
+            "Paris",
+            "Accra",
+            "Tel-Aviv",
+            "Bucuresti",
+            "Mexico",
+            "Bogota",
+            "Dubai",
+            "The Hague",
+            "Singapore",
+
+        ];
+
+        const images = [
+            "resources/Images/image1.jpeg",
+            "resources/Images/image2.jpeg",
+            "resources/Images/image3.jpeg",
+            "resources/Images/image4.jpeg",
+            "resources/Images/image5.jpeg",
+            "resources/Images/image6.jpeg",
+            "resources/Images/image7.jpeg",
+            "resources/Images/image8.jpeg",
+            "resources/Images/image9.jpeg",
+            "resources/Images/image10.jpeg",
+            "resources/Images/image11.jpeg",
+            "resources/Images/image12.jpeg",
+        ];
+
+        const cardGrid = document.getElementById("cardGrid");
+
+        questions.forEach((question, index) => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            const cardInner = document.createElement("div");
+            cardInner.classList.add("card-inner");
+
+            const cardFront = document.createElement("div");
+            cardFront.classList.add("card-front");
+            cardFront.style.backgroundImage = `url(${images[index]})`;
+
+            const cardBack = document.createElement("div");
+            cardBack.classList.add("card-back");
+
+            const cardBackTitle = document.createElement("div")
+            cardBackTitle.classList.add("card-back-title")
+            cardBackTitle.textContent = cities[index];
+
+            const cardBackText = document.createElement("div")
+            cardBackText.classList.add("card-back-text")
+            cardBackText.textContent = question;
+
+            cardInner.appendChild(cardFront);
+            cardInner.appendChild(cardBack);
+
+            cardBack.appendChild(cardBackTitle);
+            cardBack.appendChild(cardBackText);
+
+
+            card.appendChild(cardInner);
+
+            card.addEventListener("click", function() {
+                this.classList.toggle("flipped");
+            });
+
+            cardGrid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
