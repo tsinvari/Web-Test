@@ -5,6 +5,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-image: url('resources/Images/background.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover;
+  background-position: center;
 }
 
 @font-face {
@@ -19,7 +22,7 @@ body {
 
 .heading {
   font-size: 60px;
-  color: #1E4672;
+  color: #FFFFFF;
   text-align: center;
   font-family: 'Della Respira', cursive;
   margin: 25px;
@@ -43,9 +46,9 @@ body {
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #6B8EAE; /* Adjusted border color */
   border-radius: 5px;
-  background-color: #8b8b8b;
+  background-color: #96B4D2; /* Adjusted background color */
 }
 
 .title {
@@ -55,17 +58,19 @@ body {
   text-align: left;
   padding: 10px;
   box-sizing: border-box;
-  transition: background-color 0.3s; 
+  transition: background-color 0.3s;
+  background-color: #4A90E2; 
+  color: #FFFFFF; 
 }
 
 .grid-container {
   display: none;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  background-color: #f0f0f0;
+  background-color: #F2F5F8; 
   padding: 10px;
   border-radius: 0 0 5px 5px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .grid-item {
@@ -85,10 +90,13 @@ body {
 .grid-item p {
   margin-top: 50px;
   margin-right: 50px;
-  word-wrap: normal;
-  text-align: left;
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 18px; 
+  color: #333; 
+  line-height: 1.5; 
+  text-align: left; 
 }
 
 .accordion-item.expanded .title {
-  background-color: #4a4a4a; 
-}
+  background-color: #1E4672; 
+  }
