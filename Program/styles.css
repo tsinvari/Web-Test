@@ -1,0 +1,94 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Della Respira';
+  src: url('resources/fonts/Della_Respira/DellaRespira-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('resources/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
+}
+
+.heading {
+  font-size: 60px;
+  color: #1E4672;
+  text-align: center;
+  font-family: 'Della Respira', cursive;
+  margin: 25px;
+  margin-bottom: 35px;
+}
+
+.main-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #8b8b8b;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: background-color 0.3s; 
+}
+
+.grid-container {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  margin: 0 auto; 
+}
+
+.grid-item {
+  text-align: center;
+  margin: 0;
+}
+
+.grid-item img {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.grid-item p {
+  margin-top: 50px;
+  margin-right: 50px;
+  word-wrap: normal;
+  text-align: left;
+}
+
+.accordion-item.expanded .title {
+  background-color: #4a4a4a; 
+}

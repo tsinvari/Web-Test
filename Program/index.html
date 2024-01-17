@@ -1,0 +1,127 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda 17 January</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <h1 class="heading">Agenda 17 January</h1>
+        <div class="accordion" id="containerList"></div>
+        <script>
+            var data = [
+                {
+                    title: ':00 Meeting is called to order',
+                    description: 'Text content goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    imageUrl: 'resources/Images/Start.jpeg'
+                },
+                {
+                    title: ':03 Today\'s Agenda',
+                    description: '- Welcoming guests<br>- Grammarian.<br>- Table Topics<br>- Evaluators: General, Timer, Ah-counters, Speaker-evaluators.',
+                    imageUrl: 'resources/Images/rene.jpeg'
+                },
+                {
+                    title: ':06 Word of the day',
+                    description: 'Chuck will introduce a new word to the to the members and comment on its meaning an usage.',
+                    imageUrl: 'resources/Images/chuck.jpeg'
+                },
+                {
+                    title: ':08 Prepared speaker 1 - ',
+                    description: 'Another text content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+                    imageUrl: 'resources/Images/rene.jpeg'
+                },
+                {
+                    title: ':15 Prepared speaker 2 - ',
+                    description: 'Another text content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+                    imageUrl: 'resources/Images/christina.jpeg'
+                },
+                {
+                    title: ':22 Table Topics',
+                    description: 'Livia has prepare a set of topics that will give us an opportunity to speak extemporaneously for a minute or two.',
+                    imageUrl: 'resources/Images/livia.jpeg'
+                },
+                {
+                    title: ':37 Vote table topics',
+                    description: 'Christina will prepare the poll for the best table topic.',
+                    imageUrl: 'resources/Images/christina.jpeg'
+                },
+                {
+                    title: ':40 General Evaluation',
+                    description: 'Valvanera will introduce her team, give them the floor and proceed with the general evaluation.',
+                    imageUrl: 'resources/Images/valvanera.jpeg'
+                },
+                {
+                    title: ':55 Closing remarks',
+                    description: 'Another text content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+                    imageUrl: 'resources/Images/rene.jpeg'
+                },
+                {
+                    title: ':57 Role sign-up & anouncements',
+                    description: 'Another text content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+                    imageUrl: 'resources/Images/announcements.jpeg'
+                },
+                {
+                    title: ':00 Meeting adjourned',
+                    description: 'Another text content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+                    imageUrl: 'resources/Images/end.jpeg'
+                },
+            ];
+
+            // JavaScript
+              function createContainers() {
+              var containerList = document.getElementById('containerList');
+
+              data.forEach(function (item) {
+                var accordionItem = document.createElement('div');
+                accordionItem.className = 'accordion-item';
+
+                var title = document.createElement('div');
+                title.className = 'title';
+                title.innerHTML = '<h2>' + item.title + '</h2>';
+
+                var gridContainer = document.createElement('div');
+                gridContainer.className = 'grid-container';
+
+                var item1 = document.createElement('div');
+                item1.className = 'grid-item';
+                item1.innerHTML = '<img src="' + item.imageUrl + '" alt="Image">';
+
+                var item2 = document.createElement('div');
+                item2.className = 'grid-item';
+                item2.innerHTML = '<p>' + item.description + '</p>';
+
+                gridContainer.appendChild(item1);
+                gridContainer.appendChild(item2);
+
+                accordionItem.appendChild(title);
+                accordionItem.appendChild(gridContainer);
+                containerList.appendChild(accordionItem);
+
+                // Add click event listener to toggle visibility and apply the expanded class
+                title.addEventListener('click', function () {
+                  if (gridContainer.style.display === 'none' || gridContainer.style.display === '') {
+                    gridContainer.style.display = 'grid';
+                    accordionItem.classList.add('expanded');
+                  } else {
+                    gridContainer.style.display = 'none';
+                    accordionItem.classList.add('expanded');
+                  }
+                });
+              });
+            }
+
+
+// Call the function to create containers when the page loads
+window.onload = createContainers;
+
+        </script>
+    </div>
+</body>
+
+</html>
